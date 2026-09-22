@@ -1,0 +1,22 @@
+*.iml
+.gradle
+/local.properties
+/.idea/
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+
+# Signing files
+keystore.properties
+*.keystore
+*.jks
+
+# Google Services
+google-services.json
+
+# Built variants
+*.apk
+*.aab
+*.bundle

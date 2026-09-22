@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="space_navy_900">#0A0E17</color>
+    <color name="space_navy_800">#111827</color>
+    <color name="space_navy_700">#1A2332</color>
+    <color name="space_navy_600">#243347</color>
+
+    <color name="cyan_accent">#00D9E8</color>
+    <color name="cyan_accent_dim">#0AA9B5</color>
+
+    <color name="text_primary_dark">#F1F5F9</color>
+    <color name="text_secondary_dark">#94A3B8</color>
+
+    <color name="text_primary_light">#0F172A</color>
+    <color name="text_secondary_light">#475569</color>
+
+    <color name="surface_light">#FFFFFF</color>
+    <color name="background_light">#F8FAFC</color>
+
+    <color name="danger_red">#EF4444</color>
+    <color name="success_green">#22C55E</color>
+</resources>

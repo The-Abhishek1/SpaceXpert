@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SpaceXpert</string>
+
+    <string name="tab_home">Home</string>
+    <string name="tab_clean">Clean</string>
+    <string name="tab_files">Files</string>
+    <string name="tab_recover">Recover</string>
+    <string name="tab_vault">Vault</string>
+
+    <string name="home_title">Storage</string>
+    <string name="home_used_format">%1$d GB used</string>
+    <string name="home_potential_cleanup">Potential cleanup: %1$d MB</string>
+    <string name="home_cleanup_subtitle">Old downloads (180+ days) you likely don\'t need</string>
+    <string name="home_largest_files">Largest Files</string>
+
+    <string name="clean_title">Clean</string>
+    <string name="clean_tab_exact">Exact Duplicates</string>
+    <string name="clean_tab_similar">Similar Photos</string>
+    <string name="clean_similar_hint">Catches screenshots, resized copies and recompressed images — this scan is slower.</string>
+    <string name="clean_scan_button">Scan for Duplicates</string>
+    <string name="clean_scanning">Scanning…</string>
+    <string name="clean_keep_trash">Keep best, trash rest</string>
+    <string name="clean_moving">Moving to trash…</string>
+
+    <string name="files_title">Files</string>
+    <string name="files_empty">This folder is empty.</string>
+    <string name="files_delete_confirm_title">Delete permanently?</string>
+    <string name="files_delete_confirm_body">%1$s will be deleted immediately — this bypasses trash and cannot be undone.</string>
+    <string name="files_all_access_rationale">Browsing files needs full storage access.</string>
+    <string name="files_all_access_detail">You\'ll be taken to system settings — enable \"Allow access to manage all files\" for SpaceXpert.</string>
+    <string name="files_grant_access">Grant Full Access</string>
+
+    <string name="recover_title">Recently Deleted</string>
+    <string name="recover_empty">Trash is empty.</string>
+    <string name="recover_restore">Restore</string>
+
+    <string name="vault_title">Vault</string>
+    <string name="vault_subtitle">Files here are AES-256 encrypted and hidden from your gallery/file manager.</string>
+    <string name="vault_add_file">Add File to Vault</string>
+    <string name="vault_empty">Vault is empty.</string>
+    <string name="vault_locked">Vault is locked</string>
+    <string name="vault_unlock">Unlock with Biometrics</string>
+
+    <string name="permission_media_rationale">SpaceXpert needs media access to analyze your storage.</string>
+    <string name="permission_grant">Grant Access</string>
+
+    <string name="action_cancel">Cancel</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_trash_it">Trash it</string>
+    <string name="dialog_trash_title">Move to trash?</string>
+    <string name="dialog_trash_body">%1$s will move to trash and can be restored within 7 days.</string>
+</resources>
