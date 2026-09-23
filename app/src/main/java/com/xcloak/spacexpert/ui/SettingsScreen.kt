@@ -204,11 +204,16 @@ fun SettingsScreen(onBack: () -> Unit) {
                             }
                             Spacer(Modifier.height(8.dp))
                             
-                            Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                            Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                horizontalArrangement = Arrangement.spacedBy(16.dp),
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
                                 listOf("Daily", "Weekly", "Monthly").forEach { interval ->
-                                    FilterChip(
-                                        selected = cleanupInterval == interval,
-                                        onClick = {
+                                    val isSelected = cleanupInterval == interval
+                                    Row(
+                                        verticalAlignment = Alignment.CenterVertically,
+                                        modifier = Modifier.clickable {
                                             if (isPro) {
                                                 cleanupInterval = interval
                                             } else {
@@ -216,13 +221,32 @@ fun SettingsScreen(onBack: () -> Unit) {
                                                     BillingManager.launchPurchaseFlow(context)
                                                 }
                                             }
-                                        },
-                                        label = { Text(interval) },
-                                        colors = FilterChipDefaults.filterChipColors(
-                                            selectedContainerColor = CyanAccent,
-                                            selectedLabelColor = SpaceNavy900
+                                        }
+                                    ) {
+                                        RadioButton(
+                                            selected = isSelected,
+                                            onClick = {
+                                                if (isPro) {
+                                                    cleanupInterval = interval
+                                                } else {
+                                                    if (context is Activity) {
+                                                        BillingManager.launchPurchaseFlow(context)
+                                                    }
+                                                }
+                                            },
+                                            colors = RadioButtonDefaults.colors(
+                                                selectedColor = CyanAccent,
+                                                unselectedColor = hintColor
+                                            )
                                         )
-                                    )
+                                        Spacer(Modifier.width(4.dp))
+                                        Text(
+                                            text = interval,
+                                            style = MaterialTheme.typography.bodyMedium,
+                                            color = if (isSelected) CyanAccent else textColor,
+                                            fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal
+                                        )
+                                    }
                                 }
                             }
                             
@@ -264,7 +288,14 @@ fun SettingsScreen(onBack: () -> Unit) {
                                             }
                                         }
                                     },
-                                    colors = SwitchDefaults.colors(checkedThumbColor = CyanAccent)
+                                    colors = SwitchDefaults.colors(
+                                        checkedThumbColor = SpaceNavy900,
+                                        checkedTrackColor = CyanAccent,
+                                        checkedBorderColor = CyanAccent,
+                                        uncheckedThumbColor = hintColor,
+                                        uncheckedTrackColor = SpaceNavy800,
+                                        uncheckedBorderColor = colors.glassBorder.copy(alpha = 0.3f)
+                                    )
                                 )
                             }
                         }
@@ -306,6 +337,10 @@ fun SettingsToggle(
     checked: Boolean,
     onCheckedChange: (Boolean) -> Unit
 ) {
+    val colors = LocalSpaceXpertColors.current
+    val isDark = androidx.compose.foundation.isSystemInDarkTheme()
+    val hintColor = if (isDark) Color.White.copy(alpha = 0.7f) else SpaceNavy900.copy(alpha = 0.7f)
+
     Row(
         modifier = Modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.SpaceBetween,
@@ -318,7 +353,14 @@ fun SettingsToggle(
         Switch(
             checked = checked,
             onCheckedChange = onCheckedChange,
-            colors = SwitchDefaults.colors(checkedThumbColor = CyanAccent)
+            colors = SwitchDefaults.colors(
+                checkedThumbColor = SpaceNavy900,
+                checkedTrackColor = CyanAccent,
+                checkedBorderColor = CyanAccent,
+                uncheckedThumbColor = hintColor,
+                uncheckedTrackColor = SpaceNavy800,
+                uncheckedBorderColor = colors.glassBorder.copy(alpha = 0.3f)
+            )
         )
     }
 }
